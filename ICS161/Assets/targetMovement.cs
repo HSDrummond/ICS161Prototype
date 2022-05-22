@@ -5,7 +5,6 @@ using UnityEngine;
 public class targetMovement : MonoBehaviour
 {
     public GameObject[] waypoints;
-    public GameObject player;
     int current = 0;
     public float speed;
     float WPradius = 1;

@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 382967217, guid: 099fe2440fe8d7044b2f9b6aa5073f95, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 974127269, guid: 099fe2440fe8d7044b2f9b6aa5073f95, type: 3}
       propertyPath: breakedBox
       value: 
@@ -257,24 +261,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300008, guid: 3bb1be458f6c70247bdabd33e0188545, type: 3}
---- !u!1 &4480011499764715538 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 437002810306929179, guid: 099fe2440fe8d7044b2f9b6aa5073f95, type: 3}
-  m_PrefabInstance: {fileID: 4052317193891033609}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6499077592763557295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4480011499764715538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b15800db3957f3942b5a3bbaf28732c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  breakedBox: {fileID: 0}
 --- !u!1 &4480011499764715542 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 437002810306929183, guid: 099fe2440fe8d7044b2f9b6aa5073f95, type: 3}
