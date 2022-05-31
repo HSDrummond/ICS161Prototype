@@ -84,24 +84,25 @@ public class ThrowController : MonoBehaviour
         animator.SetBool("walking", walking);
 
 
-        if(Input.GetMouseButtonDown(1) && hasWeapon)
+        if (Input.GetMouseButtonDown(1) && hasWeapon)
         {
             Aim(true, true, 0);
         }
 
-        if(Input.GetMouseButtonUp(1) && hasWeapon)
+        if (Input.GetMouseButtonUp(1) && hasWeapon)
         {
             Aim(false, true, 0);
         }
 
         if (hasWeapon)
         {
-            
+
 
             if (aiming && Input.GetMouseButtonDown(0))
             {
-                animator.SetTrigger("throw");
                 ss.AddThrows(1f);//???
+
+                animator.SetTrigger("throw");
             }
 
         }
@@ -115,7 +116,7 @@ public class ThrowController : MonoBehaviour
 
         if (pulling)
         {
-            if(returnTime < 1)
+            if (returnTime < 1)
             {
                 weapon.position = GetQuadraticCurvePoint(returnTime, pullPosition, curvePoint.position, hand.position);
                 returnTime += Time.deltaTime * 1.5f;
@@ -175,8 +176,8 @@ public class ThrowController : MonoBehaviour
         weaponRb.isKinematic = false;
         weaponRb.collisionDetectionMode = CollisionDetectionMode.Continuous;
         weapon.parent = null;
-        weapon.eulerAngles = new Vector3(0, -90 +transform.eulerAngles.y, 0);
-        weapon.transform.position += transform.right/5;
+        weapon.eulerAngles = new Vector3(0, -90 + transform.eulerAngles.y, 0);
+        weapon.transform.position += transform.right / 5;
         weaponRb.AddForce(Camera.main.transform.forward * throwPower + transform.up * 2, ForceMode.Impulse);
 
         //Trail

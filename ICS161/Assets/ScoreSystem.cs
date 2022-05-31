@@ -4,14 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+//Yan Xiao
 public class ScoreSystem : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI m_hitText;
-    private float numHits = 0;
+    private static float numHits = 0;
     [SerializeField]
     private TextMeshProUGUI m_throwText;
-    private float numthrows = 0;
+    private static float numthrows = 0;
     [SerializeField]
     private TextMeshProUGUI m_rateText;
     private float successRate = 0;
@@ -31,7 +32,7 @@ public class ScoreSystem : MonoBehaviour
     public void AddThrows(float point)
     {
         numthrows += point;
-        Debug.Log("Current throws score: " + numthrows );
+        Debug.Log("Current throws score: " + numthrows);
         // this could be handled in a UI manager class insted
         m_throwText.text = "Num of throws: " + numthrows.ToString();
         DisplaySuccessRate();
@@ -55,7 +56,7 @@ public class ScoreSystem : MonoBehaviour
 
     }
 
-   
+
 
     //public int getHit()
     //{
