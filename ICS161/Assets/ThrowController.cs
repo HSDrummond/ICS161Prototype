@@ -9,7 +9,7 @@ using Cinemachine;
 [RequireComponent(typeof(Animator))]
 public class ThrowController : MonoBehaviour
 {
-
+    private ScoreSystem ss;//???
     private Animator animator;
     private MovementInput input;
     private Rigidbody weaponRb;
@@ -54,6 +54,7 @@ public class ThrowController : MonoBehaviour
     {
         Cursor.visible = false;
 
+        ss = GetComponent<ScoreSystem>();//???
         animator = GetComponent<Animator>();
         input = GetComponent<MovementInput>();
         weaponRb = weapon.GetComponent<Rigidbody>();
@@ -95,10 +96,12 @@ public class ThrowController : MonoBehaviour
 
         if (hasWeapon)
         {
+            
 
             if (aiming && Input.GetMouseButtonDown(0))
             {
                 animator.SetTrigger("throw");
+                ss.AddThrows(1f);//???
             }
 
         }

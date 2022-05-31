@@ -1,23 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
-public class ScoreSystem : MonoBehaviour
+public class StaticScoreSystem : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI m_hitText;
-    private float numHits = 0;
+    private static TextMeshProUGUI m_hitText;
+    private static float numHits = 0;
     [SerializeField]
-    private TextMeshProUGUI m_throwText;
-    private float numthrows = 0;
+    private static TextMeshProUGUI m_throwText;
+    private static float numthrows = 0;
     [SerializeField]
-    private TextMeshProUGUI m_rateText;
-    private float successRate = 0;
+    private static TextMeshProUGUI m_rateText;
+    private static float successRate = 0;
 
     //num of hits
-    public void AddHits(float point)
+    public static void AddHits(float point)
     {
         numHits += point;
         Debug.Log("Current hits scores " + numHits);
@@ -28,10 +27,10 @@ public class ScoreSystem : MonoBehaviour
 
 
     //num of throws
-    public void AddThrows(float point)
+    public static void AddThrows(float point)
     {
         numthrows += point;
-        Debug.Log("Current throws score: " + numthrows );
+        Debug.Log("Current throws score: " + numthrows);
         // this could be handled in a UI manager class insted
         m_throwText.text = "Num of throws: " + numthrows.ToString();
         DisplaySuccessRate();
@@ -39,7 +38,7 @@ public class ScoreSystem : MonoBehaviour
 
 
     //success rate
-    public void DisplaySuccessRate()
+    public static void DisplaySuccessRate()
     {
         if (numthrows == 0)
             successRate = 0;
@@ -54,33 +53,5 @@ public class ScoreSystem : MonoBehaviour
         m_rateText.text = "success rate: " + successRate.ToString() + "%";
 
     }
-
-   
-
-    //public int getHit()
-    //{
-    //    return numHits;
-    //}
-
-    //public int getHit()
-    //{
-    //    return numthrows;
-    //}
-
-    //private void Update()
-    //{
-    //    Debug.Log("Current: " + numthrows + " " + numHits);
-    //}
-
-    //public int GetHits()
-    //{
-    //    return numHits;
-    //}
-
-    //public void ResetScore()
-    //{
-    //    numHits = 0;
-    //}
-
-
 }
+
